@@ -4,34 +4,36 @@ body {
 
 #canvas {
     border: 1px black solid;
-    width: 100vw;
+    /* width: 100vw;
     height: 70vh;
     background-image: url("images/chalkboardBackground.jpeg");
     background-position: center;
     background-repeat:repeat-x;
     background-size: contain;  
-    object-fit: cover;
+    object-fit: cover;  */
 }
 
 h1 {
     color: white;
     text-align: center;
-    position: absolute;
-    margin-left: 5vw;
+    /* position: absolute; */
+    /* margin-left: 5vw; */
+    margin: 0;
     font-size: 10vw;
 }
 
 button {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 5px;
     background-color: black;
     color: white;
 }
 
 .start {
-    width: 100px;
-    height: 20px;
-    display: flex;
-    flex-direction: row;
+    /* width: 100px;
+    height: 200px; */
+    /* display: flex;
+    flex-direction: row; */
+    margin: 0;
 
 }
