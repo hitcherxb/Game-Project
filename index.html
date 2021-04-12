@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Bootcamp Life</title>
-</head>
+  </head>
 
-<body>
-    <div class="start">
-    <div><h1>Distraction Avoidance!</h1></div>
-    <div><button>Start Game</button></div>
+  <body>
+    <div class="contain-body">
+      <!-- Start Page -->
+      <div class="start">
+        <div><h1>Distraction Avoidance!</h1></div>
+
+        <div><button>Start Game</button></div>
+      </div>
+      <!-- Select Page -->
+      <div class="start hidden">
+        <div><h2>Select Character</h2></div>
+      </div>
+
+      <!--Game Page-->
+      <canvas id="canvas" class="hidden"></canvas>
     </div>
-    <canvas id='canvas'></canvas>
-
-</body>
-<script src="/script.js"></script>
-
+  </body>
+  <script src="/script.js"></script>
 </html>

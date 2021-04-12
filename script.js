@@ -1,13 +1,9 @@
 const canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
 
-// ctx.font = "18px Arial";
-// ctx.fillStyle = "white";
-// ctx.fillText('Distraction Avoidance!', 90, 20);
 
-
-let start_image = new Image();
-start_image.src = './images/chalkboardBackground.jpeg';
+let game_image = new Image();
+game_image.src = './images/classroom.jpeg'
 
 const background = {
     x: 0,
@@ -19,10 +15,22 @@ const background = {
     },
 };
 
+let buttons = document.querySelectorAll('button')
+for (button of buttons) {
+    button.onclick = function(e){
+        console.log(e, this, this.id, this.parentNode.parentNode, this.parentNode.parentNode.nextElementSibling)
+        
+        this.parentNode.parentNode.classList.add('hidden')
+        this.parentNode.parentNode.nextElementSibling.classList.remove('hidden')
+    }
+}
+
+
+
 function animate() {
     stopGame = requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     background.draw()
 
 }
-animate();
+//animate();
