@@ -23,15 +23,20 @@ h1 {
 
 button {
     position: absolute;
-    border-radius: 5px;
-    background-color: black;
+    border-radius: 15px;
+    background-color: orange;
     color: white;
+    margin-left: 44vw;
+    margin-top: 50vh;
+    font-size: 3vw;
+    padding: 10px;
+    border-style: none;
 }
 
-.start {
+/* .start {
     width: 100px;
     height: 20px;
     display: flex;
     flex-direction: row;
 
-}
+} */
