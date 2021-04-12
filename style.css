@@ -1,5 +1,15 @@
+
+
+
+
+
 #canvas {
     border: 1px black solid;
-    width: 100%;
+    width: 100vw;
     height: 70vh;
+    background-image: url("images/chalkboardBackground.jpeg");
+    background-position: center;
+    background-repeat:repeat-x;
+    background-size: contain;
+    
 }
