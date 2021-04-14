@@ -1,7 +1,7 @@
 const canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 750;
 let player = null
 
 
@@ -77,7 +77,7 @@ let img = new Image();
 let i = new Image()
 i.src = `./Images/codyBody.png`
 
-let character = new Student(img, canvas.width / 2, canvas.height / 2, 170, 170)
+let character = new Student(img, canvas.width / 2, 600, 170, 170)
 //ctx.imageSmoothingEnabled = false;
 function animate() {
     window.requestAnimationFrame(animate)
