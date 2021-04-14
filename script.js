@@ -1,10 +1,15 @@
 const canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 750;
 let player = null
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
 let buttons = document.querySelectorAll('button')
 for (button of buttons) {
     button.onclick = function (e) {
@@ -40,12 +45,12 @@ class Student {
 }
 
 class Distraction {
-    constructor (x, y, w, h, src) {
+    constructor(x, y, w, h, src) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
-        this.src= src;
+        this.src = src;
         this.distractionImg = new Image()
     }
     loadDistraction = () => {
@@ -76,6 +81,7 @@ let tvObstacles = []
 let beerObstacles = []
 
 let img = new Image();
+<<<<<<< HEAD
 let character = new Student(img, canvas.width / 2, (canvas.height/2) + 100, 170, 170)
 
 function detectCollision(rect1, rect2) {
@@ -90,14 +96,27 @@ function detectCollision(rect1, rect2) {
 
 
 
+=======
+
+let character = new Student(img, canvas.width / 2, 1000, 200, 200)
+
+
+>>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
 function animate() {
     console.log("animate")
     window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+
     character.draw()
+<<<<<<< HEAD
     tvObstacles.forEach(tv => {
         detectCollision(character, tv)
+=======
+
+    obstacles.forEach(tv => {
+>>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
         tv.drawDistraction()
+
     })
     beerObstacles.forEach(beer => {
         detectCollision(character, beer)
@@ -108,10 +127,10 @@ function animate() {
 
 window.onkeydown = function (e) {
     if (e.key === 'ArrowLeft') {
-        character.x -= 10
+        character.x -= 50
     }
     if (e.key === 'ArrowRight') {
-        character.x += 10
+        character.x += 50
     }
     console.log(this)
 }
