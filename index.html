@@ -9,30 +9,54 @@
   <title>Bootcamp Life</title>
 </head>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Bootcamp Life</title>
+</head>
+
 <body>
   <div class="contain-body">
+
+
     <!-- Start Page -->
     <div class="start">
       <div>
         <h1>Distraction Avoidance!</h1>
       </div>
-
-      <div><button>Start Game</button></div>
+      <div>
+        <div>
+          <div>
+            <button>Start Game</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+
     <!-- Select Page -->
     <div class="start hidden" id="select">
-      <div class="character">
-        <h2>Select Character</h2>
+      <div>
+        <h2>Select Student</h2>
       </div>
       <div class="students">
         <div class="students3">
-          <div><button><img src="Images/juanStudent.png"></button></div>
-          <div><button><img src="Images/codyStudent.png"></button></div>
-          <div><button> <img src="Images/cynthiaStudent.png"></button></div>
+          <div><button data-imgurl='Images/juanBody.png' id="juan"><img src="Images/juanStudent.png"></button>
+          </div>
+          <div><button data-imgurl='Images/codyBody.png' id="cody"><img src="Images/codyStudent.png"></button>
+          </div>
+          <div><button data-imgurl='Images/cynthiaBody.png' id="cynthia"> <img src="Images/cynthiaStudent.png"></button>
+          </div>
         </div>
+
+
         <div class="students2">
-          <div><button><img src="Images/jesperStudent.png"></button></div>
-          <div><button> <img src="Images/sumeetStudent.png"></button></div>
+          <div><button data-imgurl='Images/jesperBody.png' id="jesper"><img src="Images/jesperStudent.png"></button>
+          </div>
+          <div><button data-imgurl='Images/sumeetBody.png' id="sumeet"> <img src="Images/sumeetStudent.png"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -40,6 +64,12 @@
     <!--Game Page-->
     <canvas id="canvas" class="hidden"></canvas>
   </div>
+</body>
+<script src="/script.js"></script>
+
+<!--Game Page-->
+<canvas id="canvas" class="hidden"></canvas>
+</div>
 </body>
 <script src="/script.js"></script>
 
