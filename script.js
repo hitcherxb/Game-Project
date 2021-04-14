@@ -5,11 +5,6 @@ canvas.height = 750;
 let player = null
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
 let buttons = document.querySelectorAll('button')
 for (button of buttons) {
     button.onclick = function (e) {
@@ -81,7 +76,6 @@ let tvObstacles = []
 let beerObstacles = []
 
 let img = new Image();
-<<<<<<< HEAD
 let character = new Student(img, canvas.width / 2, (canvas.height/2) + 100, 170, 170)
 
 function detectCollision(rect1, rect2) {
@@ -96,25 +90,14 @@ function detectCollision(rect1, rect2) {
 
 
 
-=======
-
-let character = new Student(img, canvas.width / 2, 1000, 200, 200)
-
-
->>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
 function animate() {
     console.log("animate")
     window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     character.draw()
-<<<<<<< HEAD
     tvObstacles.forEach(tv => {
         detectCollision(character, tv)
-=======
-
-    obstacles.forEach(tv => {
->>>>>>> 9a8309a8f9784ebd7ac9056dab5862242f8ed3a1
         tv.drawDistraction()
 
     })
