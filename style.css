@@ -4,14 +4,16 @@ body {
 
 #canvas {
     border: 2px black solid;
-    background: white;
     background-image: url("/Images/board.png");
     background-repeat: no-repeat;
     background-size: cover;
+    /* background: white;
+  
+  
     position: absolute;
     width: 95vw;
     height: 80vh;
-    top: 10vh;
+    top: 10vh; */
 }
 
 h1 {

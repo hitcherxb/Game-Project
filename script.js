@@ -1,12 +1,13 @@
 const canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
-
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 let player = null
 
 
-let game_image = new Image();
-game_image.src = './images/classroom.jpeg'
-
+//let game_image = new Image();
+//game_image.src = './images/classroom.jpeg'
+/*
 const background = {
     x: 0,
     y: 0,
@@ -15,7 +16,7 @@ const background = {
     draw: function () {
         ctx.drawImage(background_image, this.x, this.y, this.w, this.h);
     },
-};
+};*/
 
 let buttons = document.querySelectorAll('button')
 for (button of buttons) {
@@ -26,7 +27,7 @@ for (button of buttons) {
         player = this.dataset.imgurl
         if (player) {
             console.log('start game for', player)
-            let img = new Image();
+
             img.src = player
             character.img = img
             img.onload = animate
@@ -44,12 +45,40 @@ class Student {
         this.h = h;
     }
     draw = () => {
-        console.log(this)
+        // console.log(this)
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 }
+// class Distraction {
+//     constructor(img, x, y, w, h) {
+//         this.img = img;
+//         this.x = x;
+//         this.y = y;
+//         this.w = w;
+//         this.h = h;
+//         this.distractionImg = new Image()
+//     }
+//     loadDistraction = () => {
+//         this.distractionImg.img = this.img
+//         this.distractionImg.onload = this.drawDistraction
+//     }
+//     drawDistraction = () => {
+//         ctx.drawImage(this.distractionImg, this.x, this.y, this.w, this.h)
+//         this.y++
+//     }
 
-let character = new Student(this.img, canvas.width/2, 75, 70, 70)
+// }
+
+// setInterval(() => {
+//     let Distraction
+// }
+
+let img = new Image();
+let i = new Image()
+i.src = `./Images/codyBody.png`
+
+let character = new Student(img, canvas.width / 2, canvas.height / 2, 170, 170)
+//ctx.imageSmoothingEnabled = false;
 function animate() {
     window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -67,4 +96,6 @@ window.onkeydown = function (e) {
     console.log(this)
 }
 
+
 animate()
+
