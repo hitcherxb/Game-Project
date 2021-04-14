@@ -56,33 +56,33 @@ class Distraction {
 
 }
 function startIntervals() {
-setInterval(() => {
-    let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
-    tv.loadDistraction()
-    tvObstacles.push(tv)
-}, 2000)
+    setInterval(() => {
+        let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
+        tv.loadDistraction()
+        tvObstacles.push(tv)
+    }, 3000)
 
 
-setInterval(() => {
-    let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
-    beer.loadDistraction()
-    beerObstacles.push(beer)
-}, 1000)
+    setInterval(() => {
+        let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
+        beer.loadDistraction()
+        beerObstacles.push(beer)
+    }, 2500)
 }
 let tvObstacles = []
 let beerObstacles = []
 
 let img = new Image();
-let character = new Student(img, canvas.width / 2, (canvas.height/2) + 100, 170, 170)
+let character = new Student(img, canvas.width / 2, 590, 170, 170)
 
 function detectCollision(rect1, rect2) {
     if (rect1.x < rect2.x + rect2.w &&
-      rect1.x + rect1.w > rect2.x &&
-      rect1.y < rect2.y + rect2.h &&
-      rect1.y + rect1.h > rect2.y) {
-      console.log("distracted af")
+        rect1.x + rect1.w > rect2.x &&
+        rect1.y < rect2.y + rect2.h &&
+        rect1.y + rect1.h > rect2.y) {
+        console.log("distracted af")
     }
-  }
+}
 
 
 
