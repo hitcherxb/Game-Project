@@ -49,33 +49,37 @@ class Student {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 }
-// class Distraction {
-//     constructor(img, x, y, w, h) {
-//         this.img = img;
-//         this.x = x;
-//         this.y = y;
-//         this.w = w;
-//         this.h = h;
-//         this.distractionImg = new Image()
-//     }
-//     loadDistraction = () => {
-//         this.distractionImg.img = this.img
-//         this.distractionImg.onload = this.drawDistraction
-//     }
-//     drawDistraction = () => {
-//         ctx.drawImage(this.distractionImg, this.x, this.y, this.w, this.h)
-//         this.y++
-//     }
+class Distraction {
+    constructor (x, y, w, h, src) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.src= src;
+        this.distractionImg = new Image()
+    }
+    loadDistraction = () => {
+        this.distractionImg.src = this.src
+        this.distractionImg.onload = this.drawDistraction
+    }
+    drawDistraction = () => {
+        ctx.drawImage(this.distractionImg, this.x, this.y, this.w, this.h)
+        this.y++
+    }
 
-// }
+}
 
-// setInterval(() => {
-//     let Distraction
-// }
+setInterval(() => {
+    let tv = new Distraction(Math.random() * canvas.width - 100, 10, 100, 100, "/Images/TV.png")
+    tv.loadDistraction()
+    obstacles.push(tv)
+}, 1000)
+let obstacles = []
+
 
 let img = new Image();
-let i = new Image()
-i.src = `./Images/codyBody.png`
+// let i = new Image()
+// i.src = `./Images/codyBody.png`
 
 let character = new Student(img, canvas.width / 2, canvas.height / 2, 170, 170)
 //ctx.imageSmoothingEnabled = false;
@@ -83,6 +87,9 @@ function animate() {
     window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     character.draw()
+    obstacles.forEach(tv => {
+        tv.drawDistraction()
+    })
 
 }
 
