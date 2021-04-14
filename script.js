@@ -5,8 +5,6 @@ canvas.height = 750;
 let player = null
 
 
-
-
 let buttons = document.querySelectorAll('button')
 for (button of buttons) {
     button.onclick = function (e) {
@@ -15,15 +13,12 @@ for (button of buttons) {
         this.parentNode.parentNode.parentNode.parentNode.nextElementSibling.classList.remove('hidden')
         player = this.dataset.imgurl
         if (player) {
-            console.log('start game for', player)
-
             img.src = player
             character.img = img
             img.onload = function () {
                 animate()
                 startIntervals()
             }
-
         }
     }
 }
@@ -85,8 +80,7 @@ function detectCollision(rect1, rect2) {
         rect1.x + rect1.w > rect2.x &&
         rect1.y < rect2.y + rect2.h &&
         rect1.y + rect1.h > rect2.y) {
-        console.log("distacted af")
-
+        console.log("distracted af")
     }
 }
 
