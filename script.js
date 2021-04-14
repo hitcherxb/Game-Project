@@ -65,20 +65,20 @@ function startIntervals() {
         let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
         tv.loadDistraction()
         tvObstacles.push(tv)
-    }, 2000)
+    }, 3000)
 
 
     setInterval(() => {
         let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
         beer.loadDistraction()
         beerObstacles.push(beer)
-    }, 1000)
+    }, 2500)
 }
 let tvObstacles = []
 let beerObstacles = []
 
 let img = new Image();
-let character = new Student(img, canvas.width / 2, (canvas.height / 2) + 100, 170, 170)
+let character = new Student(img, canvas.width / 2, 590, 170, 170)
 
 function detectCollision(rect1, rect2) {
     if (rect1.x < rect2.x + rect2.w &&
