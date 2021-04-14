@@ -68,7 +68,7 @@ let obstacles = []
 
 let img = new Image();
 
-let character = new Student(img, canvas.width / 2, 1000, 200, 200)
+let character = new Student(img, canvas.width / 2, 600, 200, 200)
 
 
 function animate() {
