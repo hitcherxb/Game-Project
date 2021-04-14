@@ -19,7 +19,10 @@ for (button of buttons) {
 
             img.src = player
             character.img = img
-            img.onload = animate
+            img.onload = function () {
+                animate()
+                startIntervals()
+            }
 
         }
     }
@@ -34,10 +37,10 @@ class Student {
         this.h = h;
     }
     draw = () => {
-        // console.log(this)
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 }
+
 class Distraction {
     constructor(x, y, w, h, src) {
         this.x = x;
@@ -57,29 +60,52 @@ class Distraction {
     }
 
 }
+function startIntervals() {
+    setInterval(() => {
+        let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
+        tv.loadDistraction()
+        tvObstacles.push(tv)
+    }, 2000)
 
-setInterval(() => {
-    let tv = new Distraction(Math.random() * canvas.width - 100, 10, 100, 100, "/Images/TV.png")
-    tv.loadDistraction()
-    obstacles.push(tv)
-}, 1000)
-let obstacles = []
 
+    setInterval(() => {
+        let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
+        beer.loadDistraction()
+        beerObstacles.push(beer)
+    }, 1000)
+}
+let tvObstacles = []
+let beerObstacles = []
 
 let img = new Image();
+let character = new Student(img, canvas.width / 2, (canvas.height / 2) + 100, 170, 170)
 
-let character = new Student(img, canvas.width / 2, 600, 200, 200)
+function detectCollision(rect1, rect2) {
+    if (rect1.x < rect2.x + rect2.w &&
+        rect1.x + rect1.w > rect2.x &&
+        rect1.y < rect2.y + rect2.h &&
+        rect1.y + rect1.h > rect2.y) {
+        console.log("distacted af")
+
+    }
+}
+
 
 
 function animate() {
+    console.log("animate")
     window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     character.draw()
-
-    obstacles.forEach(tv => {
+    tvObstacles.forEach(tv => {
+        detectCollision(character, tv)
         tv.drawDistraction()
 
+    })
+    beerObstacles.forEach(beer => {
+        detectCollision(character, beer)
+        beer.drawDistraction()
     })
 
 }
@@ -94,6 +120,4 @@ window.onkeydown = function (e) {
     console.log(this)
 }
 
-
-animate()
 
