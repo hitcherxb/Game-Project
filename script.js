@@ -67,8 +67,6 @@ let obstacles = []
 
 
 let img = new Image();
-// let i = new Image()
-// i.src = `./Images/codyBody.png`
 
 let character = new Student(img, canvas.width / 2, 1000, 200, 200)
 
@@ -78,9 +76,6 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     character.draw()
-    obstacles.forEach(tv => {
-        tv.drawDistraction()
-    })
 
     obstacles.forEach(tv => {
         tv.drawDistraction()
