@@ -38,18 +38,17 @@ class Student {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
     }
 }
-
 class Distraction {
-    constructor(img, x, y, w, h) {
-        this.img = img;
+    constructor(x, y, w, h, src) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
+        this.src = src;
         this.distractionImg = new Image()
     }
     loadDistraction = () => {
-        this.distractionImg.img = this.img
+        this.distractionImg.src = this.src
         this.distractionImg.onload = this.drawDistraction
     }
     drawDistraction = () => {
@@ -59,19 +58,17 @@ class Distraction {
 
 }
 
-// setInterval(() => {
-//     let Distraction
-// }
 setInterval(() => {
-    let tv = new Distraction("../Images/TV.png", Math.random() * canvas.width - 100, -100, 100, 100)
+    let tv = new Distraction(Math.random() * canvas.width - 100, 10, 100, 100, "/Images/TV.png")
     tv.loadDistraction()
     obstacles.push(tv)
-}, 3000)
+}, 1000)
 let obstacles = []
 
+
 let img = new Image();
-let i = new Image()
-i.src = `./Images/codyBody.png`
+// let i = new Image()
+// i.src = `./Images/codyBody.png`
 
 let character = new Student(img, canvas.width / 2, 1000, 200, 200)
 
@@ -81,6 +78,9 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     character.draw()
+    obstacles.forEach(tv => {
+        tv.drawDistraction()
+    })
 
     obstacles.forEach(tv => {
         tv.drawDistraction()
