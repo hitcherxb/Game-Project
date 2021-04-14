@@ -1,7 +1,8 @@
 body {
     margin: 0;
     overflow: hidden;
-
+    background-image: url("/Images/body.jpg");
+    background-size: cover;
 }
 
 
