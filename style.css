@@ -14,11 +14,9 @@ body {
     align-items: center;
 }
 #canvas {
-    border: 2px black solid;
     background-image: url("/Images/board.png");
     background-repeat: no-repeat;
     background-size: cover;
-  
 }
 
 h1 {

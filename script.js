@@ -60,17 +60,25 @@ function startIntervals() {
         let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
         tv.loadDistraction()
         tvObstacles.push(tv)
-    }, 3000)
+    }, 4000)
 
 
     setInterval(() => {
         let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
         beer.loadDistraction()
         beerObstacles.push(beer)
-    }, 2500)
+    }, 3500)
+
+    setInterval(() => {
+        let beach = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/vacation.png")
+        beach.loadDistraction()
+        beachObstacles.push(beach)
+    }, 3000)
 }
+
 let tvObstacles = []
 let beerObstacles = []
+let beachObstacles =[]
 
 let img = new Image();
 let character = new Student(img, canvas.width / 2, 590, 170, 170)
@@ -80,7 +88,8 @@ function detectCollision(rect1, rect2) {
         rect1.x + rect1.w > rect2.x &&
         rect1.y < rect2.y + rect2.h &&
         rect1.y + rect1.h > rect2.y) {
-        console.log("distracted af")
+        window.cancelAnimationFrame(gameInt)
+        alert("you distracted af")
     }
 }
 
@@ -88,18 +97,22 @@ function detectCollision(rect1, rect2) {
 
 function animate() {
     console.log("animate")
-    window.requestAnimationFrame(animate)
+    gameInt = window.requestAnimationFrame(animate)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     character.draw()
+
     tvObstacles.forEach(tv => {
         detectCollision(character, tv)
         tv.drawDistraction()
-
     })
     beerObstacles.forEach(beer => {
         detectCollision(character, beer)
         beer.drawDistraction()
+    })
+    beachObstacles.forEach(beach => {
+        detectCollision(character, beach)
+        beach.drawDistraction()
     })
 
 }
