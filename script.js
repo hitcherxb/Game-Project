@@ -4,8 +4,9 @@ let ctx = canvas.getContext('2d');
 canvas.width = 1000;
 canvas.height = 750;
 let player = null
+
+let audio = new Audio('audio/Heavens.mp3')
 window.onload = function () {
-    let audio = new Audio('audio/Heavens.mp3')
 
     audio.loop = true;
     audio.volume = 0.08;
