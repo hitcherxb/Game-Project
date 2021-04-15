@@ -6,11 +6,11 @@ canvas.height = 750;
 let player = null
 
 let audio = new Audio('audio/Heavens.mp3')
+audio.loop = true;
+audio.volume = 0.08;
 window.onload = function () {
 
-    audio.loop = true;
-    audio.volume = 0.08;
-    audio.play();
+
 }
 
 
@@ -27,6 +27,7 @@ for (button of buttons) {
             img.onload = function () {
                 animate()
                 startIntervals()
+                audio.play();
             }
         }
     }
