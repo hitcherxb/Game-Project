@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url("/Images/body.jpg");
+    background-image: url("Images/body.jpg");
     background-size: cover;
 }
 
@@ -14,7 +14,12 @@ body {
     align-items: center;
 }
 #canvas {
+<<<<<<< HEAD
     background-image: url("/Images/board.png");
+=======
+    border: 2px black solid;
+    background-image: url("Images/board.png");
+>>>>>>> 0a54b8e003eb471f03cfb4faa465c7f337e3c151
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -40,7 +45,7 @@ button {
 }
 
 .start {
-    background-image: url("images/chalkboardBackground.jpeg");
+    background-image: url("Images/chalkboardBackground.jpeg");
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -112,3 +117,4 @@ h2{
 #juan{
     margin-right: 3vw;
 }
+

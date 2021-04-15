@@ -57,14 +57,14 @@ class Distraction {
 }
 function startIntervals() {
     setInterval(() => {
-        let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "/Images/TV.png")
+        let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "Images/TV.png")
         tv.loadDistraction()
         tvObstacles.push(tv)
     }, 4000)
 
 
     setInterval(() => {
-        let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/beer.png")
+        let beer = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "Images/beer.png")
         beer.loadDistraction()
         beerObstacles.push(beer)
     }, 3500)
@@ -73,12 +73,16 @@ function startIntervals() {
         let beach = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/vacation.png")
         beach.loadDistraction()
         beachObstacles.push(beach)
+        score += 1
     }, 3000)
 }
 
 let tvObstacles = []
 let beerObstacles = []
 let beachObstacles =[]
+
+let score = 0
+
 
 let img = new Image();
 let character = new Student(img, canvas.width / 2, 590, 170, 170)
@@ -114,6 +118,7 @@ function animate() {
         detectCollision(character, beach)
         beach.drawDistraction()
     })
+    ctx.fillText(score, 10, 10, 200, 100)
 
 }
 
