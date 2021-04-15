@@ -67,6 +67,7 @@ function startIntervals() {
         let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "Images/TV.png")
         tv.loadDistraction()
         tvObstacles.push(tv)
+        score += 1
     }, 4000)
 
 
