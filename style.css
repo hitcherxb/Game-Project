@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url("/Images/body.jpg");
+    background-image: url("Images/body.jpg");
     background-size: cover;
 }
 
@@ -15,7 +15,7 @@ body {
 }
 #canvas {
     border: 2px black solid;
-    background-image: url("/Images/board.png");
+    background-image: url("Images/board.png");
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -42,7 +42,7 @@ button {
 }
 
 .start {
-    background-image: url("images/chalkboardBackground.jpeg");
+    background-image: url("Images/chalkboardBackground.jpeg");
     background-size: cover;
     width: 100vw;
     height: 100vh;
