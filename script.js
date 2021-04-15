@@ -1,10 +1,15 @@
+
 const canvas = document.querySelector('#canvas');
 let ctx = canvas.getContext('2d');
 canvas.width = 1000;
 canvas.height = 750;
 let player = null
 
+let audio = new Audio('./audio/Heavens.mp3')
 
+// audio.loop = true;
+audio.volume = 0.08;
+audio.play();
 
 
 let buttons = document.querySelectorAll('button')
@@ -78,7 +83,7 @@ let tvObstacles = []
 let beerObstacles = []
 
 let img = new Image();
-let character = new Student(img, canvas.width / 2, (canvas.height / 2) + 100, 170, 170)
+let character = new Student(img, canvas.width / 2, 600, 170, 170)
 
 function detectCollision(rect1, rect2) {
     if (rect1.x < rect2.x + rect2.w &&

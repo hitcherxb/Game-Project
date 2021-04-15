@@ -1,6 +1,10 @@
 body {
     margin: 0;
     overflow: hidden;
+    /* background-image: url("/Images/canvasbody.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background: black
 
 }
 
