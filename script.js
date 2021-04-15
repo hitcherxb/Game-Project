@@ -70,7 +70,7 @@ function startIntervals() {
     }, 3500)
 
     setInterval(() => {
-        let beach = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "/Images/vacation.png")
+        let beach = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "Images/vacation.png")
         beach.loadDistraction()
         beachObstacles.push(beach)
         score += 1
@@ -79,7 +79,7 @@ function startIntervals() {
 
 let tvObstacles = []
 let beerObstacles = []
-let beachObstacles =[]
+let beachObstacles = []
 
 let score = 0
 
