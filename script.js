@@ -73,7 +73,7 @@ function startIntervals() {
         let beach = new Distraction(Math.random() * canvas.width - 100, 10, 60, 70, "Images/vacation.png")
         beach.loadDistraction()
         beachObstacles.push(beach)
-        score += 1
+
     }, 3000)
 }
 
