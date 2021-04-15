@@ -1,11 +1,8 @@
 body {
     margin: 0;
     overflow: hidden;
-    /* background-image: url("/Images/canvasbody.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover; */
-    background: black
-
+    background-image: url("Images/body.jpg");
+    background-size: cover;
 }
 
 
@@ -18,10 +15,9 @@ body {
 }
 #canvas {
     border: 2px black solid;
-    background-image: url("/Images/board.png");
+    background-image: url("Images/board.png");
     background-repeat: no-repeat;
     background-size: cover;
-  
 }
 
 h1 {
@@ -45,7 +41,7 @@ button {
 }
 
 .start {
-    background-image: url("images/chalkboardBackground.jpeg");
+    background-image: url("Images/chalkboardBackground.jpeg");
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -117,3 +113,4 @@ h2{
 #juan{
     margin-right: 3vw;
 }
+
