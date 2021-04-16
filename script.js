@@ -70,7 +70,7 @@ function startIntervals() {
         let tv = new Distraction(Math.random() * canvas.width - 100, 10, 90, 90, "Images/TV.png")
         tv.loadDistraction()
         tvObstacles.push(tv)
-        score += 1
+
     }, 4000)
 
 
@@ -86,6 +86,11 @@ function startIntervals() {
         beachObstacles.push(beach)
 
     }, 3000)
+    setInterval(() => {
+        ctx.fillStyle = 'white'
+        ctx.font = 'bold 90px Schoolbell'
+        score += 1
+    }, 1000)
 }
 
 let tvObstacles = []
@@ -93,6 +98,8 @@ let beerObstacles = []
 let beachObstacles = []
 
 let score = 0
+ctx.fillStyle = 'white'
+ctx.font = 'bold 80px Schoolbell'
 
 
 let img = new Image();
@@ -129,16 +136,16 @@ function animate() {
         detectCollision(character, beach)
         beach.drawDistraction()
     })
-    ctx.fillText(score, 10, 10, 200, 100)
+    ctx.fillText(score, 30, 90, 200, 100)
 
 }
 
 window.onkeydown = function (e) {
     if (e.key === 'ArrowLeft') {
-        character.x -= 50
+        character.x -= 30
     }
     if (e.key === 'ArrowRight') {
-        character.x += 50
+        character.x += 30
     }
     console.log(this)
 }

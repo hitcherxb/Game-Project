@@ -1,8 +1,15 @@
+
+
+
+
+
+
 body {
     margin: 0;
     overflow: hidden;
     background-image: url("Images/body.jpg");
     background-size: cover;
+    font-family: 'Schoolbell', cursive;
 }
 
 
@@ -24,6 +31,7 @@ h1 {
     color: white;
     text-align: center;
     font-size: 10vw;
+    font-family: 'Schoolbell', cursive;
 }
 
 button {
@@ -71,6 +79,7 @@ h2{
     color: white;
     font-size: 100px;
     margin-bottom: 0;
+    font-family: 'Schoolbell', cursive;
 }
 
 .students{
@@ -112,5 +121,9 @@ h2{
 
 #juan{
     margin-right: 3vw;
+}
+
+button{
+    font-family: 'Schoolbell', cursive;
 }
 
